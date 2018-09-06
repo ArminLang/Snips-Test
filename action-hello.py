@@ -30,10 +30,7 @@ def subscribe_intent_callback(hermes, intentMessage):
 
 def action_wrapper(hermes, intentMessage, conf):
     current_session_id = intentMessage.session_id
-    print('Intent {}'.format(intentMessage.intent))
-    
-    for (slot_value, slot) in intentMessage.slots.items():
-        print('Slot {} -> \n\tRaw: {} \tValue: {}'.format(slot_value, slot[0].raw_value, slot[0].slot_value.value.value))
+    hermes.publish("lgtv/set/toast","YES")
         
     hermes.publish_end_session(current_session_id, "Hello World")
 
