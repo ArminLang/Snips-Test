@@ -41,8 +41,7 @@ if __name__ == "__main__":
  #   mqtt_client.message_callback_add('hermes/intent/#', on_message_intent)
     mqtt_client.connect("localhost", 1883)
 #    mqtt_client.subscribe('hermes/intent/#')
-    mqtt_client.loop_forever()
-    
     with Hermes("localhost:1883") as h:
         h.subscribe_intent("arminlang:sonosInvade", subscribe_intent_callback) \
          .start()
+     mqtt_client.loop_forever()
