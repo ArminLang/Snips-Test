@@ -39,7 +39,7 @@ def action_wrapper(hermes, intentMessage, conf):
 if __name__ == "__main__":
     mqtt_client = mqtt.Client()
  #   mqtt_client.message_callback_add('hermes/intent/#', on_message_intent)
-    mqtt_client.connect("localhost", "1883")
+    mqtt_client.connect("localhost", 1883)
 #    mqtt_client.subscribe('hermes/intent/#')
     mqtt_client.loop_forever()
     
