@@ -33,7 +33,6 @@ def subscribe_intent_callback(hermes, intentMessage):
 def action_wrapper(hermes, intentMessage, conf):
     current_session_id = intentMessage.session_id
     mqtt_client.publish("lgtv/set/toast","YES")
-        
     hermes.publish_end_session(current_session_id, "Hello World")
 
 
